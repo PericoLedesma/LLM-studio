@@ -122,15 +122,10 @@ curl -X POST http://localhost:1000/query \
 ```
 
 
-4. **H3. Key Features**
+3**H3. Key Features**
 	•	Interactive Sessions: Chat directly with the model.
 	•	Model Management: Switch between multiple models easily.
 	•	Configurable: Adjust temperature, max tokens, etc.
 	•	Integration: Works with Python, other scripts, and APIs.
 	•	Local Storage: Runs without sending data to the cloud.
 	•	Supported Formats: Works with modern LLM formats like GGUF for efficient inference.
-
-3. **Interactive Sessions**: Ollama provides an interactive shell where you can input prompts and receive responses from the model in real-time.
-4. **Configuration Options**: You can customize the behavior of the model using various flags and options provided by Ollama, such as setting the temperature for response variability.
-5. **Model Management**: Ollama includes features for managing multiple models, allowing you to switch between them easily.
-6. **Integration with Other Tools**: Ollama can be integrated with other applications and services, making it a versatile choice for developers looking to leverage local LMs.

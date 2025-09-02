@@ -33,9 +33,9 @@ This builds the `convert-hf-to-gguf.py` and `llama-quantize` tools.
 
 ### 4. Convert Hugging Face Format to GGUF
 ```bash
-./convert-hf-to-gguf.py \
+./convert-hf-to-models_formats.md.py \
   ../hf/ \
-  --outfile ../Llama3.2-1B.gguf \
+  --outfile ../Llama3.2-1B.models_formats.md \
   --outtype f16
 ```
 Result: a single `Llama3.2-1B.gguf` file ready for inference.
@@ -44,8 +44,8 @@ Result: a single `Llama3.2-1B.gguf` file ready for inference.
 For smaller sizes or lower precision, use:
 ```bash
 ./llama-quantize \
-  ../Llama3.2-1B.gguf \
-  ../Llama3.2-1B-q4_0.gguf \
+  ../Llama3.2-1B.models_formats.md \
+  ../Llama3.2-1B-q4_0.models_formats.md \
   Q4_0
 ```
 Supported formats include `Q4_0`, `Q4_K_M`, `Q5_K_M`, `Q8_0`, etc.
@@ -53,7 +53,7 @@ Supported formats include `Q4_0`, `Q4_K_M`, `Q5_K_M`, `Q8_0`, etc.
 ## Running Inference with llama.cpp
 ```bash
 ./main \
-  -m ../Llama3.2-1B.gguf \
+  -m ../Llama3.2-1B.models_formats.md \
   -p "Hello, llama.cpp!"
 ```
 This runs CPU-based inference without any heavy Python or GPU dependencies.

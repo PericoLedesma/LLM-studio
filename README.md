@@ -7,11 +7,18 @@
 ## Month 1 – Foundations (LLMs + Agents Basics)
 
 ### [Week 1 – Running LLMs]((journal/week1.md))
-- [x] **Day 1:** Install Ollama and run your first model (`ollama run llama3`).
-- [x] **Day 2:** Write a Python script to send prompts to Ollama locally.
-- [ ] **Day 3:** Sign up for OpenAI API (or Anthropic Claude) and call an online model.
-- [ ] **Day 4:** Build a simple chatbot function (`chat(prompt) -> response`) that works with both Ollama + OpenAI.
-- [ ] **Day 5:** Compare local vs online responses with the same prompt (store in JSON).
+- [x] **Day 1:** Running models locally intro.
+- [x] **Day 2:** Online inference intro.
+- [ ] **Day 3:** Download some models.
+  - GGUF model locally.
+  - Run a pytorch model locally.
+- [ ] **Day 4:** LangChain basics (loaders, prompts, chains). Pipelines
+  - Build a minimal LangChain chain with a prompt template.
+- [ ] **Day 5:** Functions
+- Maybe create a transformer
+- Build a simple chatbot function (`chat(prompt) -> response`) that works with both Ollama + OpenAI.
+- pytorch checkpoint of a model, obtain metadata
+- Try to train a model in my computer
 
 ### Week 2 – Agent Basics
 - [ ] **Day 6:** Implement a simple agent loop: ask → reason → respond.
