@@ -1,5 +1,14 @@
-# Why we need llama.cpp after downloading a Llama model
+# What is llama.cpp?
 
+`llama.cpp` is a lightweight, high-performance **C++ library** for running LLaMA and other GGUF-compatible language models locally.
+
+**Key Features:**
+
+* ⚡ Supports **CPU-only inference** and **GPU acceleration** via Metal on Apple devices
+* 🧠 Enables **fast, low-memory execution** of large language models
+* 🔒 Runs models **locally**, no cloud required
+
+Perfect for **local experimentation, research, and integration** into apps that need efficient language model inference.
 
 
 ---
