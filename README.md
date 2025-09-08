@@ -15,7 +15,7 @@
 - [ ] **Day 4:** LangChain basics (loaders, prompts, chains). Pipelines
   - Build a minimal LangChain chain with a prompt template.
 - [ ] **Day 5:** Functions
-- Maybe create a transformer
+- Maybe create a transformer[README.md](README.md)
 - Build a simple chatbot function (`chat(prompt) -> response`) that works with both Ollama + OpenAI.
 - pytorch checkpoint of a model, obtain metadata
 - Try to train a model in my computer
