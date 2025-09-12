@@ -44,7 +44,7 @@ prompt = ChatPromptTemplate.from_messages(
 ).partial(format_instructions=parser.get_format_instructions())
 
 tools = [search_tool, wiki_tool, save_tool]
-agent= create_tool_calling_agent(
+agent = create_tool_calling_agent(
     llm=llm,
     prompt=prompt,
     tools=tools,
@@ -52,7 +52,7 @@ agent= create_tool_calling_agent(
 
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-query=input("Enter your research topic: ")
+query = input("Enter your research topic: ")
 raw_responser = agent_executor.invoke({"query": query})
 
 exit()

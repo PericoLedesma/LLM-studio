@@ -17,6 +17,12 @@ Each format is optimized for different use cases (training, inference, distribut
   - `model.Q5_1.gguf`
 - **Best for**: Running quantized models on Mac, Windows, or Linux (especially on Apple Silicon).  
 
+[Link](https://huggingface.co/docs/hub/gguf)
+[GGUF usage with llama.cpp](https://huggingface.co/docs/hub/gguf-llamacpp)
+
+![img.png](img.png)
+
+
 ---
 
 
