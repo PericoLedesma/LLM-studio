@@ -13,6 +13,9 @@ You can download them in several ways: using the **Transformers** library, the *
     
     # Download a model
     huggingface-cli repo clone bert-base-uncased ./bert-base-uncased
+    
+    # or download specific files
+    git clone https://huggingface.co/google/gemma-3-270m
 ```
 
 ```python

@@ -9,9 +9,15 @@
 ### [Week 1 – Running LLMs]((journal/week1.md))
 - [x] **Day 1:** Running models locally intro.
 - [x] **Day 2:** Online inference intro.
-- [ ] **Day 3:** Download some models.
-  - GGUF model locally.
-  - Run a pytorch model locally.
+- [x] **Day 3:** Download some models and run them locally.
+  - llama.cpp(GGUF format)
+    - server inference
+    - python bindings
+  - Transformers (SAFETENSORS format)
+    - 3 options:download with git, huggingface_hub, transformers
+  - ollama 
+    - server inference
+    - python bindings
 - [ ] **Day 4:** LangChain basics (loaders, prompts, chains). Pipelines
   - Build a minimal LangChain chain with a prompt template.
 - [ ] **Day 5:** Functions
