@@ -3,7 +3,6 @@ import os
 
 
 client = InferenceClient(
-    api_key=os.environ.get("HUGGINGFACEHUB_API_TOKEN"),
     provider="auto",   # Automatically selects best provider
 )
 

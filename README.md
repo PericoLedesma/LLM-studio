@@ -18,7 +18,12 @@
   - ollama 
     - server inference
     - python bindings
-- [ ] **Day 4:** LangChain basics (loaders, prompts, chains). Pipelines
+- [ ] **Day 4:** Online inference with OpenAI + LangChain.
+  - OpenAI API (Python SDK)
+
+
+  
+- LangChain basics (loaders, prompts, chains). Pipelines
   - Build a minimal LangChain chain with a prompt template.
 - [ ] **Day 5:** Functions
 - Maybe create a transformer[README.md](README.md)
@@ -97,3 +102,16 @@ After completing the foundational roadmap, consider exploring the following area
 - **Monitoring & Logging:** Set up monitoring tools to track the performance and health of your agents, and implement logging mechanisms for debugging and auditing purposes.
 - **Advanced Agent Architectures:** Explore more complex agent architectures such as hybrid agents, which combine symbolic reasoning with machine learning, or multi-modal agents that can process and understand multiple types of data inputs.
 - **Ethics & Governance:** Study the ethical implications of deploying AI agents, including bias mitigation, transparency, and accountability in decision-making processes.
+
+
+----
+
+## Git commit conventions
+
+Types of commits you might use:
+	•	feat: → new feature
+	•	fix: → bug fix
+	•	refactor: → code restructuring
+	•	docs: → documentation changes
+	•	test: → adding/updating tests
+	•	chore: → minor updates or tooling
