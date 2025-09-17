@@ -11,7 +11,6 @@ def generate_pet_name(animal_type: str = "Dog") -> str:
     prompt_template_name = PromptTemplate(
         input_variables=['animal_type'],
         template="You are a {animal_type} name generator. You will be given a description of a pet and you will generate a list of 5 names for the pet."
-
     )
 
     # Component 3 - Chain
