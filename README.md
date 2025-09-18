@@ -6,7 +6,7 @@
 
 ## Month 1 – Foundations (LLMs + Agents Basics)
 
-### [Week 1 – Running LLMs]((journal/week1.md))
+### Week 1 – Running LLMs
 - [x] **Day 1:** Running models locally intro.
 - [x] **Day 2:** Online inference intro.
 - [x] **Day 3:** Download some models and run them locally.
@@ -18,18 +18,12 @@
   - ollama 
     - server inference
     - python bindings
-- [ ] **Day 4:** Online inference with OpenAI + LangChain.
+- [x] **Day 4:** Online inference with OpenAI + LangChain.
   - OpenAI API (Python SDK)
+  - LangChain basics (loaders, prompts, chains).
+- [x] **Day 5:** Functions 
+  - Pipelines
 
-
-  
-- LangChain basics (loaders, prompts, chains). Pipelines
-  - Build a minimal LangChain chain with a prompt template.
-- [ ] **Day 5:** Functions
-- Maybe create a transformer[README.md](README.md)
-- Build a simple chatbot function (`chat(prompt) -> response`) that works with both Ollama + OpenAI.
-- pytorch checkpoint of a model, obtain metadata
-- Try to train a model in my computer
 
 ### Week 2 – Agent Basics
 - [ ] **Day 6:** Implement a simple agent loop: ask → reason → respond.
@@ -38,7 +32,7 @@
 - [ ] **Day 9:** Add memory (store last 3 messages in a list, include in prompt).
 - [ ] **Day 10:** Build an agent that answers trivia + does math with tool use.
 
-### Week 3 – Multi-Agent Intro
+### Week 3 – Multi-Agent Intro (Por aqui debería ir)
 - [ ] **Day 11:** Write two functions: `researcher_agent` and `writer_agent`.
 - [ ] **Day 12:** Make them exchange text via function calls (simple print/return).
 - [ ] **Day 13:** Use AutoGen or CrewAI to handle multi-agent conversations.
@@ -53,6 +47,11 @@
 - [ ] **Day 20:** Demo: Ask an agent math questions → MCP server answers.
 - [ ] **Day 21:** Install Docker and run a simple container.
 - [ ] **Day 22:** Containerize your MCP server with a Dockerfile.
+
+#### Aditional
+- Maybe create a transformer[README.md](README.md)
+- pytorch checkpoint of a model, obtain metadata
+- Try to train a model in my computer
 
 ---
 
