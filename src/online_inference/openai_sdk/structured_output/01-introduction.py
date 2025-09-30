@@ -12,11 +12,14 @@ def send_reply(message: str):
 # --------------------------------------------------------------
 # Unstructured output example
 # --------------------------------------------------------------
+
+query = "Hi there, I have a question about my bill. Can you help me?"
+print("Query: ", query)
+
 print("\n--------------------------------")
 print("Unstructured output example")
 print("--------------------------------")
 
-query = "Hi there, I have a question about my bill. Can you help me?"
 
 messages = [
     {"role": "system", 

@@ -28,7 +28,7 @@ class EventExtraction(BaseModel):
     is_calendar_event: bool = Field(
         description="Whether this text describes a calendar event"
     )
-    
+
     confidence_score: float = Field(description="Confidence score between 0 and 1")
 
 
@@ -173,6 +173,7 @@ def process_calendar_request(user_input: str) -> Optional[EventConfirmation]:
 user_input = "Let's schedule a 1h team meeting next Tuesday at 2pm with Alice and Bob to discuss the project roadmap."
 
 result = process_calendar_request(user_input)
+
 if result:
     print(f"Confirmation: {result.confirmation_message}")
     if result.calendar_link:
@@ -184,6 +185,9 @@ else:
 # --------------------------------------------------------------
 # Step 5: Test the chain with an invalid input
 # --------------------------------------------------------------
+print("\n--------------------------------")
+print("Test with a valid input")
+print("--------------------------------")
 
 user_input = "Can you send an email to Alice and Bob to discuss the project roadmap?"
 

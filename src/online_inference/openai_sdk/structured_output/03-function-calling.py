@@ -56,7 +56,8 @@ response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=messages,
     tools=tools,
-    tool_choice={"type": "function", "function": {"name": function_name}},
+    tool_choice={"type": "function", 
+                "function": {"name": function_name}},
 )
 
 tool_call = response.choices[0].message.tool_calls[0]
