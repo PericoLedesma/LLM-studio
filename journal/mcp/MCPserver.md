@@ -114,4 +114,28 @@ Most MCP servers expose a single `/rpc` endpoint that handles all JSON-RPC 2.0 r
 - **User control** with consent mechanisms
 - **Modular design** allowing focused functionality
 
+## Running the Server
 
+There are several ways to run your MCP server:
+
+### 1. Development Mode with MCP Inspector
+
+The easiest way to test your server is using the MCP Inspector:
+
+```bash
+mcp dev server.py
+```
+
+This runs your server locally and connects it to the MCP Inspector, a web-based tool that lets you interact with your server's tools and resources directly. This is great for testing.
+
+### 2. Direct Execution (only needed for SSE)
+
+You can also run the server directly:
+
+```bash
+# Method 1: Running as a Python script
+python server.py
+
+# Method 2: Using UV (recommended)
+uv run server.py
+```
