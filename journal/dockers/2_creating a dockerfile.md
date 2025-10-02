@@ -11,10 +11,11 @@ A Dockerfile is a script containing a series of instructions that Docker uses to
 6. **Clean up**: Remove package caches and temporary files
 
 
-#### 🏗️ FROM - Base Image```dockerfile
-FROM python:3.11-slim
-FROM ubuntu:20.04
-FROM node:16-alpine
+#### 🏗️ FROM - Base Image
+```dockerfile
+    FROM python:3.11-slim
+    FROM ubuntu:20.04
+    FROM node:16-alpine
 ```
 - **Purpose**: Specifies the base image to start from
 - **Must be**: The first instruction in any Dockerfile
@@ -69,10 +70,10 @@ FROM node:16-alpine
 
 #### 🌍 ENV - Environment Variables
 ```dockerfile
-ENV NODE_ENV=production
-ENV PYTHONPATH=/app
-ENV DATABASE_URL=postgresql://localhost/mydb
-ENV PATH="/app/bin:${PATH}"
+    ENV NODE_ENV=production
+    ENV PYTHONPATH=/app
+    ENV DATABASE_URL=postgresql://localhost/mydb
+    ENV PATH="/app/bin:${PATH}"
 ```
 - **Purpose**: Sets environment variables available during build and runtime
 - **Syntax**: `ENV key=value` or `ENV key value`
@@ -80,9 +81,9 @@ ENV PATH="/app/bin:${PATH}"
 
 #### 🔌 EXPOSE - Document Ports
 ```dockerfile
-EXPOSE 8080
-EXPOSE 3000 8000
-EXPOSE 80/tcp 53/udp
+    EXPOSE 8080
+    EXPOSE 3000 8000
+    EXPOSE 80/tcp 53/udp
 ```
 - **Purpose**: Documents which ports the application uses
 - **Note**: Does NOT actually publish ports (use `docker run -p` for that)
@@ -90,12 +91,12 @@ EXPOSE 80/tcp 53/udp
 
 #### 👤 USER - Set User Context
 ```dockerfile
-# Create and switch to non-root user
-RUN useradd -m -s /bin/bash appuser
-USER appuser
+    # Create and switch to non-root user
+    RUN useradd -m -s /bin/bash appuser
+    USER appuser
 
-# Or use numeric UID
-USER 1000:1000
+    # Or use numeric UID
+    USER 1000:1000
 ```
 - **Purpose**: Sets the user for subsequent instructions and container runtime
 - **Security**: Avoid running as root in production
@@ -105,22 +106,22 @@ USER 1000:1000
 
 **CMD - Default Command (can be overridden)**
 ```dockerfile
-# Exec form (recommended)
-CMD ["python", "app.py"]
-CMD ["npm", "start"]
+    # Exec form (recommended)
+    CMD ["python", "app.py"]
+    CMD ["npm", "start"]
 
-# Shell form
-CMD python app.py
+    # Shell form
+    CMD python app.py
 ```
 
 **ENTRYPOINT - Fixed Command (cannot be overridden)**
 ```dockerfile
-# Always runs this command
-ENTRYPOINT ["python", "app.py"]
+    # Always runs this command
+    ENTRYPOINT ["python", "app.py"]
 
-# Combined with CMD for default arguments
-ENTRYPOINT ["python", "app.py"]
-CMD ["--port", "8080"]
+    # Combined with CMD for default arguments
+    ENTRYPOINT ["python", "app.py"]
+    CMD ["--port", "8080"]
 ```
 
 **Key Differences:**
@@ -132,13 +133,13 @@ CMD ["--port", "8080"]
 
 #### 📦 ARG - Build Arguments
 ```dockerfile
-ARG PYTHON_VERSION=3.11
-FROM python:${PYTHON_VERSION}-slim
+    ARG PYTHON_VERSION=3.11
+    FROM python:${PYTHON_VERSION}-slim
 
-ARG BUILD_DATE
-ARG VERSION=1.0.0
-LABEL build_date=${BUILD_DATE}
-LABEL version=${VERSION}
+    ARG BUILD_DATE
+    ARG VERSION=1.0.0
+    LABEL build_date=${BUILD_DATE}
+    LABEL version=${VERSION}
 ```
 - **Purpose**: Variables available only during build (not runtime)
 - **Usage**: `docker build --build-arg PYTHON_VERSION=3.9 .`

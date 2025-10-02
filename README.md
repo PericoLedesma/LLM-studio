@@ -91,7 +91,7 @@ journal/                      # Learning notes and documentation
   - SSE, stdio, and HTTP transports
 - [x] **Day 13:** Async MCP patterns ✅
   - AsyncIO library examples (`src/mcp/asyncio_lib/`)
-- [ ] **Day 14:** Docker containerization
+- [x] **Day 14:** Docker containerization
 - [ ] **Day 15:** Small project: linkedin post swarm of agents
 
 ### 📋 **Week 4 – Advanced Patterns (PLANNED)**

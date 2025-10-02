@@ -34,16 +34,20 @@ Here's a simple Python application example:
 
 ## Basic Docker Commands
 
-| Group         | Command                                   | Description                                   |
-|---------------|-------------------------------------------|-----------------------------------------------|
-| Images        | `docker pull ubuntu`                      | Pull an image from Docker Hub                 |
-| Images        | `docker images`                           | List downloaded images                        |
-| Running       | `docker run ubuntu echo "Hello Docker!"`  | Run a container and execute a command         |
-| Running       | `docker run -it my-image sh`              | Run container interactively                   |
-| Running       | `docker run -d nginx`                     | Run container in background (detached)        |
-| Debugging     | `docker stop <container_id>`              | Stop a running container                      |
-| Debugging     | `docker rm <container_id>`                | Remove a container                            |
-| Debugging     | `docker rmi <image_name>`                 | Remove an image                               |
+| Group         | Command                                         | Description                                   |
+|---------------|-------------------------------------------------|-----------------------------------------------|
+| Images        | `docker pull ubuntu`                            | Pull an image from Docker Hub                 |
+| Images        | `docker images`                                 | List downloaded images                        |
+| Build         | `docker build -t my-app .`                      | Build an image from a Dockerfile              |
+| Running       | `docker run ubuntu echo "Hello Docker!"`        | Run a container and execute a command         |
+| Running       | `docker run -it my-image sh`                    | Run container interactively                   |
+| Running       | `docker run -d nginx`                           | Run container in background (detached)        |
+| Running       | `docker run -p 8000:8000 <image_name>`          | Run container and map port 5000 to host       |
+| Containers    | `docker ps`                                     | List running containers                       |
+| Containers    | `docker ps -a`                                  | List all containers (including stopped ones)  |
+| Debugging     | `docker stop <container_id>`                    | Stop a running container                      |
+| Debugging     | `docker rm <container_id>`                      | Remove a container                            |
+| Debugging     | `docker rmi <image_name>`                       | Remove an image                               |
 
 ## Troubleshooting
 1. **Port already in use**
