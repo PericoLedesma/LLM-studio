@@ -127,6 +127,33 @@ journal/                      # Learning notes and documentation
 
 ---
 
+## 📊 **Langfuse Integration & Tracing**
+
+Langfuse is used throughout this project for tracing, monitoring, and analyzing LLM and agent workflows. Key integration points include:
+
+- **General Integration:**  
+  - Langfuse setup and basic usage (`src/online_inference/langfuse/`)
+- **Pipelines:**  
+  - Tracing for pipelines (`src/online_inference/langfuse/pipeline_tracing.py`)
+- **Function Calling:**  
+  - Tracing function calls (`src/online_inference/langfuse/function_call_tracing.py`)
+- **Response Logging:**  
+  - Logging and analyzing LLM responses (`src/online_inference/langfuse/response_logging.py`)
+- **Agent Tracing:**  
+  - Tracing agent execution and tool usage (`src/online_inference/langfuse/agent_tracing.py`)
+- **Workflow Tracing:**  
+  - Tracing multi-step workflows (`src/online_inference/langfuse/workflow_tracing.py`)
+- **MCP Requests:**  
+  - Tracing MCP server/client interactions (`src/online_inference/langfuse/mcp_tracing.py`)
+- **Multi-agent and Communication:**  
+  - Planned: Tracing for multi-agent workflows and message passing
+- **Advanced Analytics:**  
+  - Planned: Custom analytics and advanced tracing (`src/online_inference/langfuse/`)
+
+Langfuse helps visualize, debug, and optimize all stages of LLM and agent development in this repository.
+
+---
+
 ## 🚀 **Month 2 – 
 
 ### **Week 5 – 

@@ -8,25 +8,8 @@ Think of it this way:
 - **Docker** = Individual musicians (containers)
 - **Docker Compose** = The conductor who makes them play in harmony
 
-## Why Use Docker Compose?
 
-### Before Docker Compose (The Hard Way 😰)
-```bash
-  # Run a database
-  docker run -d --name mydb -e POSTGRES_PASSWORD=secret postgres:13
-
-  # Run a web app
-  docker run -d --name myapp -p 3000:3000 --link mydb:db myapp:latest
-
-  # Run a cache
-  docker run -d --name redis -p 6379:6379 redis:alpine
-
-  # Clean up (if you remember all the names!)
-  docker stop mydb myapp redis
-  docker rm mydb myapp redis
-```
-
-### With Docker Compose (The Easy Way 😎)
+### Docker Compose (The Easy Way 😎)
 ```bash
   # Start everything
   docker-compose up
@@ -35,84 +18,74 @@ Think of it this way:
   docker-compose down
 ```
 
-## Basic Docker Compose File Structure
-
-Create a file called `docker-compose.yml`:
+## Basic Docker Compose File Structure (docker-compose.yml)
 
 ```yaml
-  version: '3.8'
+version: '3.8'
 
-  services:
-    web:
-      build: .
-      ports:
-        - "3000:3000"
-      depends_on:
-        - db
-        - redis
-
-    db:
-      image: postgres:13
-      environment:
-        POSTGRES_PASSWORD: secret
-      volumes:
-        - postgres_data:/var/lib/postgresql/data
-
-    redis:
-      image: redis:alpine
-      ports:
-        - "6379:6379"
-
-  volumes:
-    postgres_data:
+services:
+  quickstart-app:
+    build:
+      context: ./quickstart
+      dockerfile: Dockerfile
+    container_name: quickstart-container
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=5000
+    volumes:
+      - ./quickstart:/app
+    restart: unless-stopped
 ```
 
 ## Key Concepts Explained
 
-### 1. Services
-Each service is a container. In the example above:
-- `web` - Your application
-- `db` - PostgreSQL database
-- `redis` - Redis cache
+- **version: '3.8'**  
+  Specifies the version of the Docker Compose file format.
 
-### 2. Images vs Build
-```yaml
-  # Use a pre-built image
-  db:
-    image: postgres:13
+- **services:**  
+  This section lists all the containers (services) you want to run. In this example, there is one service called `quickstart-app`.
 
-  # Build from Dockerfile
-  web:
-    build: .
-```
+  - **quickstart-app:**  
+    The name of the service.
 
-### 3. Ports
-```yaml
-  ports:
-    - "3000:3000"  # host:container
-    - "8080:80"    # map host port 8080 to container port 80
-```
+    - **build:**  
+      Tells Docker Compose to build the image from a Dockerfile.
+      - `context: ./quickstart` — The directory containing the Dockerfile and app code.
+      - `dockerfile: Dockerfile` — The Dockerfile to use.
 
-### 4. Environment Variables
-```yaml
-  environment:
-    - NODE_ENV=production
-    - DATABASE_URL=postgres://user:pass@db:5432/mydb
-```
+    - **container_name:**  
+      Sets a custom name for the running container (`quickstart-container`).
 
-### 5. Volumes
-```yaml
-  volumes:
-    - ./data:/app/data        # Bind mount
-    - postgres_data:/var/lib/postgresql/data  # Named volume
-```
+    - **ports:**  
+      Maps port 5000 on your host to port 5000 in the container (`"5000:5000"`), so you can access the app at `localhost:5000`.
 
-### 6. Dependencies
-```yaml
-  depends_on:
-    - db      # Start db before web
-    - redis   # Start redis before web
-```
+    - **environment:**  
+      Sets environment variables inside the container, configuring Flask to run the app and listen on all interfaces (`0.0.0.0`) and port 5000.
+
+    - **volumes:**  
+      Mounts the local `./quickstart` directory into `/app` inside the container. This allows live code changes on your host to be reflected in the container.
+
+    - **restart:**  
+      Configures the container to restart automatically unless it is explicitly stopped.
+
+
+### What is a Service?
+A service in docker-compose.yml defines:
+What image to use (or how to build one)
+How to run the container (ports, environment variables, volumes, etc.)
+Configuration for the container's behavior
+
+
+**How it works:**  
+When you run `docker-compose up`, Docker Compose will:
+1. Build the image for `quickstart-app` using the specified Dockerfile.
+2. Start the container with the given environment variables and port mappings.
+3. Mount your code into the container for easy development.
+4. Automatically restart the container if it crashes.
+
 
 ## Common Commands
 
