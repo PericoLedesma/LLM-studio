@@ -2,35 +2,7 @@
 Asyncio Library Examples
 ========================
 
-What is Asyncio?
-----------------
-Asyncio is Python's built-in library for writing asynchronous code using the async/await syntax.
-It allows you to write concurrent code that can handle many operations at once without 
-blocking the execution thread. This is particularly useful for I/O-bound operations like
-network requests, file operations, or database queries.
 
-asyncio is the engine (event loop).
-async def creates special functions (coroutines).
-await is the pause button that lets others run while waiting.
-
-Key Benefits:
-- Non-blocking I/O operations
-- Efficient resource utilization
-- Better performance for I/O-bound tasks
-- Clean, readable code with async/await syntax
-
-This file contains practical examples demonstrating key asyncio concepts:
-- Basic async/await syntax
-- Creating and running coroutines
-- Concurrent execution with asyncio.gather()
-- Running tasks in the background
-- Handling timeouts
-- Async context managers
-- Producer-Consumer patterns
-- Error handling in async code
-- Semaphores for limiting concurrency
-
-How to run: python asyncio_lib.py
 """
 
 import asyncio
