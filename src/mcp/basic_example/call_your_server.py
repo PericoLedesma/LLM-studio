@@ -33,8 +33,9 @@ async def call_tool(name: str):
 
         print("=" * 50)
         # Then call the greet tool
+        print("\nLet´s call the tool with input Ford")
         result = await client.call_tool("greet", {"name": "Ford"})
-        print("Greeting result:", result)
+        print("*****Tool answer:\n", result)
 
 
 asyncio.run(call_tool("Ford"))
