@@ -4,6 +4,15 @@
 
 The Model Context Protocol (MCP) client code requires **asyncio** because the entire MCP protocol is built around asynchronous communication patterns. This document explains why asyncio is essential and what would happen without it.
 
+Your MCP client library (client.list_tools()) is designed as an asynchronous library. The library authors made it async, so you must use it that way.
+Why Did They Make It Async?
+Network operations are slow. When you call client.list_tools():
+
+It sends a request over the network to the MCP server
+Waits for the server to respond
+This could take 100ms, 500ms, or even seconds
+
+
 Without Asyncio:
 ``` python
     # Your program FREEZES here waiting for the server
