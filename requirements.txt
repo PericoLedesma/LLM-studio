@@ -1,0 +1,22 @@
+# Core LLM APIs
+openai
+langfuse
+python-dotenv
+
+# LangChain ecosystem
+langchain
+langchain-openai
+langchain-community
+
+# MCP (Model Context Protocol)
+mcp
+
+# Local inference
+llama-cpp-python
+transformers
+torch
+ollama
+
+# Web / serving
+fastapi
+uvicorn

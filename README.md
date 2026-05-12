@@ -8,7 +8,7 @@
 # Clone and set up
 git clone <repo-url>
 cd LLM-studio
-pip install openai langchain langchain-openai mcp langfuse python-dotenv
+pip install -r requirements.txt
 
 # Copy and fill in your API keys
 cp .env.example .env
@@ -200,28 +200,20 @@ The journey is organized as progressive stages — each builds on the previous. 
 
 ---
 
-## 📊 **Langfuse Integration & Tracing**
+## 📊 **Langfuse Integration & Tracing** *(Planned)*
 
-Langfuse is used throughout this project for tracing, monitoring, and analyzing LLM and agent workflows. Key integration points include:
+> **Status:** Not yet implemented. The integrations below are planned for `src/online_inference/langfuse/`.
 
-- **General Integration:**  
-  - Langfuse setup and basic usage (`src/online_inference/langfuse/`)
-- **Pipelines:**  
-  - Tracing for pipelines (`src/online_inference/langfuse/pipeline_tracing.py`)
-- **Function Calling:**  
-  - Tracing function calls (`src/online_inference/langfuse/function_call_tracing.py`)
-- **Response Logging:**  
-  - Logging and analyzing LLM responses (`src/online_inference/langfuse/response_logging.py`)
-- **Agent Tracing:**  
-  - Tracing agent execution and tool usage (`src/online_inference/langfuse/agent_tracing.py`)
-- **Workflow Tracing:**  
-  - Tracing multi-step workflows (`src/online_inference/langfuse/workflow_tracing.py`)
-- **MCP Requests:**  
-  - Tracing MCP server/client interactions (`src/online_inference/langfuse/mcp_tracing.py`)
-- **Multi-agent and Communication:**  
-  - Planned: Tracing for multi-agent workflows and message passing
+Langfuse will be used for tracing, monitoring, and analyzing LLM and agent workflows across all stages. Planned coverage:
 
-Langfuse helps visualize, debug, and optimize all stages of LLM and agent development in this repository.
+- **General setup** — SDK initialization, environment configuration
+- **Pipelines** — trace LangChain pipelines end-to-end
+- **Function calling** — capture tool inputs, outputs, and latency
+- **Response logging** — log and analyze raw LLM responses
+- **Agent tracing** — trace agent reasoning steps and tool usage
+- **Workflow tracing** — trace multi-step orchestrations
+- **MCP requests** — trace server/client interactions
+- **Multi-agent** — trace A2A message passing and delegation
 
 ---
 
