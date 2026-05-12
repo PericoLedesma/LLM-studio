@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(find /Users/pedrorodriguezdeledesmajimenez/scripts/llm_studio -maxdepth 2 -name requirements*.txt -o -name setup.py -o -name pyproject.toml -o -name Pipfile -o -name poetry.lock)",
-      "Bash(find /Users/pedrorodriguezdeledesmajimenez/scripts/llm_studio -name requirements*.txt -o -name setup.py -o -name pyproject.toml -o -name Pipfile)"
-    ]
-  }
-}
