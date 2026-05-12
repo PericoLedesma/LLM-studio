@@ -43,6 +43,9 @@ models/
 # Docker
 .docker/
 
+# Claude Code (machine-specific)
+.claude/
+
 # IDE
 .idea/
 .vscode/
