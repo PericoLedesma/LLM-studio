@@ -11,7 +11,7 @@ Ollama operates by allowing users to download, install, and run various LLMs dir
 ```bash
   ollama list
 ```
-
+Note: available models in https://ollama.com/library
 - **Search or Discover Available Models**: Ollama allows you to see available models for download
 ```bash
   ollama search <model-name>
